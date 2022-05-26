@@ -1,0 +1,106 @@
+/* BUTTON EFFECT */
+.button:hover {
+	background-position: right center;
+}
+/* NAVBAR EFFECT */
+.header .navbar a span {
+	display: inline-block;
+	transition: all 0.5s;
+}
+.header .navbar a:hover {
+	color: #f55f8d;
+}
+.header .navbar a:hover span {
+	animation: upToDown 0.3s;
+}
+
+@keyframes upToDown {
+	49% {
+		transform: translateY(100%);
+	}
+	50% {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+	51% {
+		opacity: 1;
+	}
+}
+
+/* SERVICE EFFECT  */
+.service .row .col .item:hover {
+	transform: translateY(-5%);
+}
+
+/* FEATURES IMAGE EFFECT  */
+@keyframes move2 {
+	0% {
+		transform: rotate(1deg) translate(2px, 2px);
+	}
+
+	50% {
+		transform: rotate(-1deg) translate(-2px, -2px);
+	}
+
+	100% {
+		transform: rotate(1deg) translate(2px, 2px);
+	}
+}
+.features .col-right {
+	animation: move2 5s infinite;
+}
+
+/* PORTFOLIO EFFECT  */
+.portfolio .col::before {
+	content: "";
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	display: block;
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0) 0,
+		rgba(255, 255, 255, 0.3) 100%
+	);
+	transform: skewX(-25deg);
+	transition: all 0.75s;
+}
+.portfolio .col:hover::before {
+	left: 125%;
+}
+.portfolio .col:hover .col__overlay {
+	opacity: 1;
+}
+.portfolio .col__overlay .col__icon {
+	transform: translate(20px, -20px);
+}
+.portfolio .col:hover .col__icon {
+	transform: translate(0);
+}
+.portfolio .col__overlay .col__text {
+	transform: translateY(150px);
+}
+.portfolio .col:hover .col__text {
+	transform: translateY(0);
+}
+
+/* BUTTON FOOTER  */
+.footer__top button:hover i{
+	animation: toLeftFromRight .5s forwards;
+}
+@keyframes toLeftFromRight {
+    49% {
+        transform: translateX(100%)
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateX(-100%)
+    }
+
+    51% {
+        opacity: 1
+    }
+}
